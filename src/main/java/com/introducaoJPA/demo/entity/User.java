@@ -5,6 +5,7 @@
  */
 package com.introducaoJPA.demo.entity;
 
+import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Set;
 
@@ -14,7 +15,7 @@ import java.util.Set;
  */
 
 @Entity
-public class User {
+public class User{
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,6 +25,18 @@ public class User {
     
     @ManyToMany
     private Set<Role> roles; 
+    
+    public User(String name, String email){
+        super();
+        this.name = name;
+        this.email = email;
+    }
+    
+    public User(){
+        super();
+        this.name = name;
+        this.email = email;
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -37,7 +50,7 @@ public class User {
         this.email = email;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
