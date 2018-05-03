@@ -40,7 +40,7 @@ public class UserRepositoryUseExample {
         userRepository.save(user01);
         
         //deletar
-        userRepository.delete(user01);
+        //userRepository.delete(user01);
         
         //deletar por id
         //userRepository.deleteById(user01.getId());
@@ -56,7 +56,7 @@ public class UserRepositoryUseExample {
         }
         
         //empty table
-        userRepository.deleteAll();    
+        //userRepository.deleteAll();    
     }
     
     public void createUser(String name, String email){
