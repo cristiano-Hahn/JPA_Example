@@ -45,6 +45,17 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+                <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<scope>test</scope>
+		</dependency>
+	 <dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-web</artifactId>
+	  <version>5.0.5.RELEASE</version>
+	  <type>jar</type>
+	 </dependency>
 	</dependencies>
 
 	<build>
