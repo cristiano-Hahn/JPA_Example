@@ -5,7 +5,9 @@
  */
 package com.introducaoJPA.demo.config;
 
+import com.introducaoJPA.demo.entity.Role;
 import com.introducaoJPA.demo.entity.User;
+import com.introducaoJPA.demo.repository.RoleRepository;
 import com.introducaoJPA.demo.repository.UserRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,8 @@ import org.springframework.stereotype.Component;
 public class UserRepositoryUseExample {
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    RoleRepository roleRepository;
     
     public void executeExamplesRepositories(){
         
@@ -54,6 +58,22 @@ public class UserRepositoryUseExample {
         for (User user : usersC) {
             System.out.println(user.getName());
         }
+        
+        roleRepository.deleteAll();
+        
+        Role role01 = new Role();
+        role01.setName("Role02");
+        Role role02 = new Role();
+        role02.setName("Role03");
+        Role role03 = new Role();
+        role03.setName("Role01");
+        
+        roleRepository.save(role01);
+        roleRepository.save(role02);
+        roleRepository.save(role03);
+        
+        
+        
         
         //empty table
         //userRepository.deleteAll();    
