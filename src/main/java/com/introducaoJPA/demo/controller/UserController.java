@@ -6,6 +6,8 @@
 package com.introducaoJPA.demo.controller;
 
 import com.introducaoJPA.demo.repository.UserRepository;
+import com.introducaoJPA.demo.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,15 +19,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class UserController {
     
-    private UserRepository userRepository;
     
-    public UserController(UserRepository userRepository){
-        this.userRepository = userRepository;
-    }
+    @Autowired
+    private UserService userService;
     
     @RequestMapping("/user")
     public String getUsers(Model model){
-        model.addAttribute("usersList", userRepository.findAll());
+        model.addAttribute("usersList", userService.findFirst3());
         
         return "user";
     }
